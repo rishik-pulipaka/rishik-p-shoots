@@ -29,7 +29,7 @@ const Footer = () => {
         </div>
         <div id="copyright-container" className="">
             <div className="self-center mt-12 text-base text-center text-white tracking-[2.85px] max-md:mt-10">
-                © Rishik Pulipaka. All Rights Reserved.
+                © 2024 Rishik Pulipaka. All Rights Reserved.
             </div>
         </div>
     </div>
