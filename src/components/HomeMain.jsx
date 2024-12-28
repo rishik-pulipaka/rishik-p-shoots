@@ -1,5 +1,5 @@
-import portraitsImg from '../assets/portraits_image.jpg'
-import actionImg from '../assets/action_image.jpg'
+import portraitsImg from '../assets/images/portraits/portraits_image.jpg'
+import actionImg from '../assets/images/action/action_image.jpg'
 
 export const HomeMain = () => {
   return (

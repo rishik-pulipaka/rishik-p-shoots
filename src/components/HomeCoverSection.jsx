@@ -1,4 +1,4 @@
-import coverImg from '../assets/cover_image.jpg'
+import coverImg from '../assets/images/portraits/cover_image.jpg'
 
 const HomeCoverSection = () => {
   return (
