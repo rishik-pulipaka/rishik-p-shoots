@@ -14,6 +14,9 @@ const Action = () => {
     return (
         <div className="bg-[#3B3B3B] w-screen h-full">
             <Header />
+            <div id="title-container" className="flex justify-center items-center p-6 mt-6">
+                <h1 className="font-montserrat text-[80px] text-white font-semibold">Action</h1>
+            </div>
             <div id="images-container" className="p-5">
                 <ul className="flex flex-wrap gap-[20px]">
                     {imagePaths.map((imagePath, index) => (
