@@ -5,7 +5,7 @@ import Header from "../components/Header"
 
 const Gallery = () => {
   return (
-    <div className="bg-[#3B3B3B] w-screen h-screen">
+    <div className="bg-[#3B3B3B] w-full h-full">
       <Header />
       <GalleryMain />
       <Footer />

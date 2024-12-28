@@ -12,7 +12,7 @@ const Portraits = () => {
     const imagePaths = Object.keys(images);
 
     return (
-        <div className="bg-[#3B3B3B] w-screen h-full">
+        <div className="bg-[#3B3B3B] w-full h-full">
             <Header />
             <div id="title-container" className="flex justify-center items-center p-6 mt-6">
                 <h1 className="font-montserrat text-[80px] text-white font-semibold">Portraits</h1>
