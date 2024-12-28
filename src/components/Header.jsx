@@ -4,7 +4,7 @@ const Header = () => {
 
         {/* Logo */}
         <a href="/home">
-          <div className="flex">
+          <div className="flex gap-3">
             <div className="">
               <h1 className="text-3xl font-semibold tracking-[10px]">
                 RISHIK P
@@ -13,6 +13,7 @@ const Header = () => {
                 SHOOTS
               </h1>     
             </div>
+            {/* Vertical line in logo */}
             <div className="shrink-0 w-[1px] border-white border-solid border-[2px] h-[70px]" />
           </div>
         </a>
