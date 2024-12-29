@@ -22,11 +22,6 @@ const Footer = () => {
             </div>
           </a>
         </div>
-        <div id="slogan-container" className="">
-          <h1 className="text-white font-light font-montserrat text-sm leading-9 mt-[60px]">
-            Where <span className="font-semibold">memories</span> meet <span className="font-semibold">masterpieces</span>
-          </h1>
-        </div>
         <div id="copyright-container" className="">
             <div className="self-center mt-12 text-base text-center text-white tracking-[2.85px] max-md:mt-10">
                 © 2024 Rishik Pulipaka. All Rights Reserved.
