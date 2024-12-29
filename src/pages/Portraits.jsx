@@ -8,6 +8,9 @@ const Portraits = () => {
 
   const [selectedImage, setSelectedImage] = useState(null);
   const [isZoomed, setIsZoomed] = useState(false);
+  const [isLandscape, setIsLandscape] = useState(false);
+
+  
 
   const openLightbox = (imagePath) => {
     setSelectedImage(imagePath);
@@ -25,9 +28,18 @@ const Portraits = () => {
   useEffect(() => {
     if (selectedImage) {
       document.body.style.overflow = "hidden";
+
+      // Create an image element to determine dimensions
+      const img = new Image();
+      img.src = selectedImage;
+
+      img.onload = () => {
+        setIsLandscape(img.width > img.height); // Set isLandscape based on dimensions
+      };
     } else {
       document.body.style.overflow = "auto";
     }
+
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -40,7 +52,7 @@ const Portraits = () => {
             <h1 className="font-montserrat text-[80px] text-white font-semibold">Portraits</h1>
         </div>
         <div id="images-container" className="p-5">
-            <ul className="flex flex-wrap gap-[20px]">
+            <ul className="flex flex-wrap gap-[7px]">
                 {imagePaths.map((imagePath, index) => (
                     <li 
                         key={index}
@@ -65,9 +77,10 @@ const Portraits = () => {
           onClick={closeLightbox}
         >
           <div
+            id="lightbox-image-container"
             className={`relative max-w-xl w-full h-full flex justify-center items-center transition-transform duration-300 ${
-              isZoomed ? "cursor-zoom-out" : "cursor-zoom-in"
-            }`}
+                isZoomed ? "cursor-zoom-out" : "cursor-zoom-in"
+              } ${isLandscape ? "landscape-style" : "portrait-style"}`}
             onClick={(e) => {
               e.stopPropagation();
               toggleZoom();

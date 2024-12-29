@@ -7,3 +7,11 @@
 *::after {
     box-sizing: border-box;
 }
+
+.landscape-style {
+    max-width: 64rem;
+  }
+  
+  .portrait-style {
+    max-width: 36rem
+  }
