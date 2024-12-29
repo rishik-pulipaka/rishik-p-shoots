@@ -7,7 +7,24 @@ export const HomeMain = () => {
         <div className="flex gap-0 max-md:flex-col">
             {/* Portraits Image */}
             <a href="/gallery/portraits" className='w-full'>
-              <div className="flex relative flex-col justify-center items-center px-20 py-96 w-full text-center text-white min-h-[1000px] max-md:px-5 max-md:py-24 max-md:max-w-full hover:opacity-85 ease-in-out duration-300">
+              <div className="
+              flex
+              relative
+              flex-col
+              justify-center
+              items-center
+              px-20
+              py-96 
+              w-full 
+              text-center 
+              text-white 
+              min-h-[1000px] 
+              max-md:px-5 
+              max-md:py-24 
+              max-md:max-w-full 
+              hover:opacity-65 
+              ease-in-out 
+              duration-300">
                 <img
                   loading="lazy"
                   src={portraitsImg}
@@ -20,7 +37,24 @@ export const HomeMain = () => {
 
             {/* Action Image */}
             <a href="/gallery/action" className='w-full'>
-              <div className="flex relative flex-col justify-center items-center px-20 py-96 w-full text-center text-white min-h-[1000px] max-md:px-5 max-md:py-24 max-md:max-w-full hover:opacity-85 ease-in-out duration-300">
+              <div className="
+              flex 
+              relative 
+              flex-col 
+              justify-center 
+              items-center 
+              px-20 
+              py-96 
+              w-full 
+              text-center 
+              text-white 
+              min-h-[1000px] 
+              max-md:px-5 
+              max-md:py-24 
+              max-md:max-w-full 
+              hover:opacity-65 
+              ease-in-out 
+              duration-300">
                 <img
                   loading="lazy"
                   src={actionImg}
