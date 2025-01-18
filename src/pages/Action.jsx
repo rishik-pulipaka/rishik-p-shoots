@@ -5,7 +5,7 @@ import Header from "../components/Header"
 
 
 const Action = () => {
-    const images = import.meta.glob('/src/assets/images/action/*.{jpg,png,jpeg,webp}');
+      const images = import.meta.glob('/src/assets/images/action/*.{jpg,png,jpeg,webp}');
       const imagePaths = Object.keys(images);
     
       const [selectedImage, setSelectedImage] = useState(null);
