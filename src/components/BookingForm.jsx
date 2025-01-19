@@ -7,7 +7,8 @@ const BookingForm = () => {
     last_name: "",
     email: "",
     photoshoot_type: "",
-    date_time: "",
+    date: "",
+    time: "",
     comments: "",
   });
 
@@ -18,7 +19,7 @@ const BookingForm = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch("http://localhost:1800/bookings", {
+      const response = await fetch("http://localhost:5000/api/bookings", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -26,27 +27,28 @@ const BookingForm = () => {
         body: JSON.stringify(formData),
       });
   
-      const data = await response.json();
-  
       if (response.ok) {
+        const result = await response.json();
+        console.log("Booking successful:", result);
         alert("Booking submitted successfully!");
+        // Optionally clear the form
         setFormData({
           first_name: "",
           last_name: "",
           email: "",
           photoshoot_type: "",
-          date_time: "",
+          date: "",
+          time: "",
           comments: "",
         });
       } else {
-        console.error("Server response error:", data);
-        alert(`Error submitting booking: ${data.error || "Unknown error"}`);
+        console.error("Failed to submit booking.");
       }
     } catch (error) {
-      console.error("Network error:", error);
-      alert("Failed to submit booking. Please try again.");
+      console.error("Error:", error);
     }
   };
+  
 
 
 
@@ -123,18 +125,35 @@ const BookingForm = () => {
         </select>
       </div>
 
-      <div id="date-and-time-container" className="flex flex-col">
-        <label htmlFor="day-and-time" className="self-start ml-8 text-base font-bold text-white tracking-[2.85px] max-md:ml-2.5">
-            day and time:
-        </label>
-        <input
-          id="date-time"
-          type="datetime-local"
-          name="date_time"
-          value={formData.date_time}
-          onChange={handleChange}
-          className="flex shrink-0 mt-2.5 bg-[#5C5C5C] rounded-[34px] h-[50px] w-[860px] text-wrap pl-10 text-left text-white font-montserrat text-xl"
-        />
+      <div id="date-and-time-container" className="flex gap-7 max-md:flex-col">
+        <div id="date-container" className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+          <label htmlFor="date" className="self-start ml-8 text-base font-bold text-white tracking-[2.85px] max-md:ml-2.5">
+            date:
+          </label>
+          <input
+            id="date"
+            type="date"
+            name="date"
+            value={formData.date}
+            onChange={handleChange}
+            label="date"
+            className="flex shrink-0 mt-2.5 bg-[#5C5C5C] rounded-[34px] w-[400px] h-[50px] text-wrap pl-10 text-left text-white font-montserrat text-xl"
+          />
+        </div>
+
+        <div id="time-container" className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+          <label htmlFor="time" className="self-start ml-8 text-base font-bold text-white tracking-[2.85px] max-md:ml-2.5">
+            time:
+          </label>
+          <input
+            id="time"
+            type="time"
+            name="time"
+            value={formData.time}
+            onChange={handleChange}
+            label="time"
+            className="flex shrink-0 mt-2.5 bg-[#5C5C5C] rounded-[34px] w-[400px] h-[50px] text-wrap pl-10 text-left text-white font-montserrat text-xl" />
+        </div>
       </div>
 
       <div id="comments-container" className="flex flex-col">

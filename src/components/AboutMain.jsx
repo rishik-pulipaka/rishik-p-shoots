@@ -1,4 +1,4 @@
-import pfp from "../assets/profile_pic.jpg"
+import pfp from "../assets/blank_profile_picture.webp"
 
 const AboutMain = () => {
     return (
