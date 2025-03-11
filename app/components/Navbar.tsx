@@ -4,6 +4,20 @@ import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { motion } from "motion/react";
 import { items } from "../data/navigation";
+import { Montserrat } from "next/font/google";
+
+const montserratFont = Montserrat({
+  subsets: ["latin"],
+  weight: "400",
+});
+const montserratFontSemiBold = Montserrat({
+  subsets: ["latin"],
+  weight: "500",
+});
+const montserratFontBold = Montserrat({
+  subsets: ["latin"],
+  weight: "800",
+});
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,14 +53,14 @@ export default function Navbar() {
   }, [isOpen]);
 
     return (
-      <div className="bg-secondary py-4 px-10 w-full h-[120px] flex items-center justify-between text-white font-montserrat lg:h-[151px]">
+      <div className={`bg-secondary py-5 px-10 w-full h-[120px] flex items-center justify-between text-white lg:h-[151px] ${montserratFont.className} `}>
         <a href="/home">
           <div className="flex gap-3">
             <div className="">
-              <h1 className="text-lg font-semibold tracking-[10px] lg:text-3xl">
+              <h1 className={`text-lg tracking-[10px] lg:text-3xl ${montserratFontSemiBold.className}`}>
                 RISHIK P
               </h1>
-              <h1 className="text-lg font-bold tracking-[14.5px] lg:text-3xl">
+              <h1 className={`text-lg tracking-[14.5px] lg:text-3xl ${montserratFontBold.className}`}>
                 SHOOTS
               </h1>     
             </div>
@@ -96,7 +110,7 @@ export default function Navbar() {
         animate={isOpen ? "open" : "closed"}
         exit="closed"
         ref={containerRef}
-        className="absolute left-0 top-0 flex h-[40vh] w-full flex-col items-center justify-center bg-[#76726A] shadow-lg lg:hidden"
+        className="absolute left-0 top-0 flex h-[40vh] w-full flex-col items-center justify-center bg-secondary shadow-lg lg:hidden"
         variants={sidebarVariants}
       >
         <motion.ul className="list-none space-y-6 text-2xl text-white">
