@@ -4,7 +4,6 @@
 @theme {
     --color-primary: oklch(35.23% 0 0);
     --color-secondary: oklch(55.32% 0.0131 84.59);
-    --font-montserrat: "Poppins", sans-serif;
 }
 
 *,
