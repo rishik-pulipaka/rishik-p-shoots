@@ -4,6 +4,8 @@ import Title from "@/app/components/Title";
 import { portraitItems } from "@/app/data/portraits";
 import Image from "next/image";
 
+import Masonry from "react-masonry-css";
+
 // import LightGallery from 'lightgallery/react';
 // import 'lightgallery/css/lightgallery.css';
 // import 'lightgallery/css/lg-zoom.css';
@@ -16,22 +18,28 @@ export default function PortraitGallery() {
     <div>
       <Title text="portraits" />
       <div id="photos-container" className="p-5">
-      <ul className="flex flex-wrap gap-[7px]">
+        <Masonry
+          breakpointCols={{
+            default: 4,
+            1100: 3,
+            768: 2,
+            500: 1
+          }} 
+          className="flex gap-2"
+          columnClassName=""
+        >
           {portraitItems.map((item, i) => (
-            <li key={i} className="flex-grow h-[40vh]">
-              <Image
-                src={item.image}
-                alt={item.title}
-                layout="responsive"
-                loading="lazy"
-                className="max-h-full min-w-full object-cover align-bottom"
-              />
-            </li>
+            <Image 
+              key={i}
+              src={item.image}
+              alt={item.title}
+              className="my-2"
+              layout="responsive"
+              loading="lazy"
+            />
           ))}
-
-          <li className="flex-grow-[1000] h-[40vh]"></li>
-      </ul>
-    </div>
+        </Masonry>
+      </div>
 
     </div>
   );
