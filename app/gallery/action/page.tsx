@@ -1,3 +1,5 @@
+"use client"
+
 import Title from "@/app/components/Title";
 import Image from "next/image";
 import { actionItems } from "@/app/data/action";
