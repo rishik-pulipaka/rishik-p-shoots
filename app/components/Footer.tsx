@@ -8,17 +8,17 @@ export default function Footer() {
     return (
         <div id="footer-container" className="mt-[100px] p-[5px] w-full h-[200px] bg-primary text-white flex flex-col justify-center items-center inset-x-0 bottom-0 font-montserrat">
           <div id="socials-container" className="flex w-[250px] h-[50px] text-white justify-evenly items-center p-2">
-            <Link href="https://www.instagram.com/">
+            <Link target="_blank" href="https://www.instagram.com/">
               <div className="size-[23px]">
                 <Image src={insta_icon} alt="instagram icon" />
               </div>
             </Link>
-            <Link href="https://www.pinterest.com/">
+            <Link target="_blank" href="https://www.pinterest.com/">
               <div className="size-[23px]">
                 <Image src={pinterest_icon} alt="pinterest icon" />
               </div>
             </Link>
-            <Link href="https://www.google.com/">
+            <Link target="_blank" href="https://www.google.com/">
               <div className="size-[23px]">
                 <Image src={mail_icon} alt="mail icon" />
               </div>
