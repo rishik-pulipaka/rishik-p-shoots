@@ -6,12 +6,15 @@ import Image from "next/image";
 
 import Masonry from "react-masonry-css";
 
-// import LightGallery from 'lightgallery/react';
-// import 'lightgallery/css/lightgallery.css';
-// import 'lightgallery/css/lg-zoom.css';
-// import 'lightgallery/css/lg-thumbnail.css';
-// import lgThumbnail from 'lightgallery/plugins/thumbnail';
-// import lgZoom from 'lightgallery/plugins/zoom';
+import LightGallery from 'lightgallery/react';
+import 'lightgallery/css/lightgallery.css';
+import 'lightgallery/css/lg-zoom.css';
+import 'lightgallery/css/lg-thumbnail.css';
+import lgThumbnail from 'lightgallery/plugins/thumbnail';
+import lgZoom from 'lightgallery/plugins/zoom';
+
+import Img1 from "@/public/images/portraits/DSC_0005_result.webp";
+import Img2 from "@/public/images/portraits/DSC_0245_result.webp";
 
 export default function PortraitGallery() {
   return (
@@ -39,6 +42,16 @@ export default function PortraitGallery() {
             />
           ))}
         </Masonry>
+
+        <LightGallery
+          onInit={() => console.log("initialized")}
+          speed={500}
+          plugins={[lgThumbnail, lgZoom]}
+        >
+              <Image alt="img1" src={Img1} />
+              <Image alt="img2" src={Img2} />
+        </LightGallery>
+
       </div>
 
     </div>
