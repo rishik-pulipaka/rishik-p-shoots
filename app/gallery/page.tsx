@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import portraitsImg from "../../public/images/portraits/portraits_image_result.webp"
 import actionImg from "../../public/images/action/action_image_result.webp"
+import wildlifeImg from "../../public/images/action/action_image_result.webp"
+import carImg from "../../public/images/action/action_image_result.webp"
 import { Montserrat } from "next/font/google";
 
 const montserratFont = Montserrat({
@@ -31,10 +33,32 @@ export default function GalleryPage() {
               <Image 
                 loading="lazy"
                 src={actionImg}
-                alt="portraits img"
+                alt="action img"
                 className="object-cover absolute inset-0 size-full"
               />
               <h1 className="absolute inset-0 self-center items-center justify-center text-center font-montserrat tracking-[5px] font-bold text-2xl">action</h1>
+            </Link>
+          </div>
+          <div id="wildlife-container" className="bg-white relative w-[750px] h-[550px] hover:opacity-55 ease-in-out duration-300">
+            <Link href="/gallery/wildlife">
+              <Image 
+                loading="lazy"
+                src={wildlifeImg}
+                alt="wildlife img"
+                className="object-cover absolute inset-0 size-full"
+              />
+              <h1 className="absolute inset-0 self-center items-center justify-center text-center font-montserrat tracking-[5px] font-bold text-2xl">wildlife</h1>
+            </Link>
+          </div>
+          <div id="car-container" className="bg-white relative w-[750px] h-[550px] hover:opacity-55 ease-in-out duration-300">
+            <Link href="/gallery/cars">
+              <Image 
+                loading="lazy"
+                src={carImg}
+                alt="car img"
+                className="object-cover absolute inset-0 size-full"
+              />
+              <h1 className="absolute inset-0 self-center items-center justify-center text-center font-montserrat tracking-[5px] font-bold text-2xl">cars</h1>
             </Link>
           </div>
         </div>

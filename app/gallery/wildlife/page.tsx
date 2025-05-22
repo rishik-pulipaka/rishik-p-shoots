@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import Title from "@/app/components/Title";
 import Image from "next/image";
-import { portraitItems } from "@/app/data/portraits";
+import { wildlifeItems } from "@/app/data/wildlife";
 
 import Masonry from "react-masonry-css";
 
@@ -14,7 +14,7 @@ import "lightgallery/css/lg-thumbnail.css";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
 
-export default function PortraitGallery() {
+export default function ActionGallery() {
   useEffect(() => {
     const disableContextMenu = (e: MouseEvent) => e.preventDefault();
     document.addEventListener("contextmenu", disableContextMenu);
@@ -22,10 +22,10 @@ export default function PortraitGallery() {
       document.removeEventListener("contextmenu", disableContextMenu);
     };
   }, []);
-  
+
   return (
     <div>
-      <Title text="portraits" />
+      <Title text="wildlife" />
       <div id="photos-container" className="p-5">
         <LightGallery
           onInit={() => console.log("LightGallery initialized")}
@@ -44,16 +44,17 @@ export default function PortraitGallery() {
             className="flex gap-2"
             columnClassName=""
           >
-            {portraitItems.map((item, i) => (
+            {wildlifeItems.map((item, i) => (
               <a
                 key={i}
                 href={item.image.src}
                 data-src={item.image.src}
+                data-sub-html=""
                 className="lightgallery-item block my-2"
               >
                 <Image
                   src={item.image}
-                  alt={item.title}
+                  alt=""
                   width={600}
                   height={400}
                   className="w-full h-auto rounded-lg shadow"
