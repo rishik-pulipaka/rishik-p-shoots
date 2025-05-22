@@ -7,7 +7,7 @@ import Link from "next/link"
 export default function Footer() {
     return (
         <div id="footer-container" className="mt-[100px] p-[5px] w-full h-[200px] bg-primary text-white flex flex-col justify-center items-center inset-x-0 bottom-0 font-montserrat">
-          <div id="socials-container" className="flex w-[250px] h-[50px] text-white justify-evenly items-center p-2">
+          <div id="socials-container" className="flex w-[250px] h-[50px] text-secondary justify-evenly items-center p-2">
             <Link target="_blank" href="https://www.instagram.com/">
               <div className="size-[23px]">
                 <Image src={insta_icon} alt="instagram icon" />
@@ -24,7 +24,7 @@ export default function Footer() {
               </div>
             </Link>
           </div>        
-        <div id="copyright-container" className="self-center mt-12 text-sm text-center text-white tracking-[2.85px] max-md:mt-10">
+        <div id="copyright-container" className="self-center mt-12 text-sm text-center text-secondary tracking-[2.85px] max-md:mt-10">
             © 2025 Rishik P Shoots. All Rights Reserved.
         </div>
         

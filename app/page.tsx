@@ -10,7 +10,7 @@ const montserratFont = Montserrat({
 
 export default function HomePage() {
   return (
-    <div className={`relative text-white ${montserratFont.className}`}>
+    <div className={`relative text-secondary ${montserratFont.className}`}>
       <div className="flex relative flex-col justify-center items-center px-20 py-96 w-full text-center min-h-[1000px] max-md:px-5 max-md:py-24 max-md:max-w-full">
         <Image 
           loading="lazy"

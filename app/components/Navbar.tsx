@@ -53,7 +53,7 @@ export default function Navbar() {
   }, [isOpen]);
 
     return (
-      <div className={`bg-secondary py-5 px-10 w-full h-[120px] flex items-center justify-between text-white lg:h-[151px] ${montserratFont.className} `}>
+      <div className={`bg-primary py-5 px-10 w-full h-[120px] flex items-center justify-between text-secondary lg:h-[151px] ${montserratFont.className} `}>
         <Link href="/">
           <div className="flex gap-3">
             <div className="">
@@ -110,10 +110,10 @@ export default function Navbar() {
         animate={isOpen ? "open" : "closed"}
         exit="closed"
         ref={containerRef}
-        className="absolute z-20 left-0 top-0 flex h-[40vh] w-full flex-col items-center justify-center bg-secondary shadow-lg lg:hidden"
+        className="absolute z-20 left-0 top-0 flex h-[40vh] w-full flex-col items-center justify-center bg-primary shadow-lg lg:hidden"
         variants={sidebarVariants}
       >
-        <motion.ul className="list-none space-y-6 text-2xl text-white">
+        <motion.ul className="list-none space-y-6 text-2xl text-secondary">
           {items.map(({ name, link }, index) => (
             <motion.li
               key={index}

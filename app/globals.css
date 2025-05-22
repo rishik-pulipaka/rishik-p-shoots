@@ -2,8 +2,8 @@
 
 
 @theme {
-    --color-primary: oklch(35.23% 0 0);
-    --color-secondary: oklch(55.32% 0.0131 84.59);
+    --color-primary: #0F0F0F;  /* Darker */
+    --color-secondary: #FAFAFA;  /* Lighter */
 }
 
 *,

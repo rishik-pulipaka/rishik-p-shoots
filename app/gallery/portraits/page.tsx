@@ -1,60 +1,70 @@
-"use client"
+"use client";
 
+import { useEffect } from "react";
 import Title from "@/app/components/Title";
-import { portraitItems } from "@/app/data/portraits";
 import Image from "next/image";
+import { portraitItems } from "@/app/data/portraits";
 
 import Masonry from "react-masonry-css";
 
-import LightGallery from 'lightgallery/react';
-import 'lightgallery/css/lightgallery.css';
-import 'lightgallery/css/lg-zoom.css';
-import 'lightgallery/css/lg-thumbnail.css';
-import lgThumbnail from 'lightgallery/plugins/thumbnail';
-import lgZoom from 'lightgallery/plugins/zoom';
-
-import Img1 from "@/public/images/portraits/DSC_0005_result.webp";
-import Img2 from "@/public/images/portraits/DSC_0245_result.webp";
+import LightGallery from "lightgallery/react";
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-zoom.css";
+import "lightgallery/css/lg-thumbnail.css";
+import lgThumbnail from "lightgallery/plugins/thumbnail";
+import lgZoom from "lightgallery/plugins/zoom";
 
 export default function PortraitGallery() {
+  // ✅ Disable right-click globally
+  useEffect(() => {
+    const disableContextMenu = (e: MouseEvent) => e.preventDefault();
+    document.addEventListener("contextmenu", disableContextMenu);
+    return () => {
+      document.removeEventListener("contextmenu", disableContextMenu);
+    };
+  }, []);
+  
   return (
     <div>
       <Title text="portraits" />
       <div id="photos-container" className="p-5">
-        <Masonry
-          breakpointCols={{
-            default: 4,
-            1100: 3,
-            768: 2,
-            500: 1
-          }} 
-          className="flex gap-2"
-          columnClassName=""
-        >
-          {portraitItems.map((item, i) => (
-            <Image 
-              key={i}
-              src={item.image}
-              alt={item.title}
-              className="my-2"
-              layout="responsive"
-              loading="lazy"
-            />
-          ))}
-        </Masonry>
-
         <LightGallery
-          onInit={() => console.log("initialized")}
+          onInit={() => console.log("LightGallery initialized")}
           speed={500}
           plugins={[lgThumbnail, lgZoom]}
+          selector=".lightgallery-item"
+          download={false}
         >
-              <Image alt="img1" src={Img1} />
-              <Image alt="img2" src={Img2} />
+          <Masonry
+            breakpointCols={{
+              default: 4,
+              1100: 3,
+              768: 2,
+              500: 1,
+            }}
+            className="flex gap-2"
+            columnClassName=""
+          >
+            {portraitItems.map((item, i) => (
+              <a
+                key={i}
+                href={item.image.src} // ✅ use .src from StaticImageData
+                data-src={item.image.src}
+                className="lightgallery-item block my-2"
+              >
+                <Image
+                  src={item.image} // ✅ can use the full object here
+                  alt=""
+                  width={600}
+                  height={400}
+                  className="w-full h-auto rounded-lg shadow"
+                  loading="lazy"
+                />
+              </a>
+            ))}
+          </Masonry>
         </LightGallery>
-
       </div>
-
     </div>
   );
 }
-  
