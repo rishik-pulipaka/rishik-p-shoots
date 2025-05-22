@@ -42,17 +42,17 @@ const actionItems: ActionItem[] = [
   { image: Action22, title: "Action Image 22" },
   { image: Action17, title: "Action Image 17" },
   { image: Action5, title: "Action Image 5" },
+  { image: Action18, title: "Action Image 18" },
   { image: Action3, title: "Action Image 3" },
   { image: Action2, title: "Action Image 2" },
   { image: Action13, title: "Action Image 13" },
+  { image: Action6, title: "Action Image 6" },
   { image: Action8, title: "Action Image 8" },
   { image: Action10, title: "Action Image 10" },
+  { image: Action12, title: "Action Image 12" },
   { image: Action19, title: "Action Image 19" },
   { image: Action21, title: "Action Image 21" },
-  { image: Action6, title: "Action Image 6" },
-  { image: Action12, title: "Action Image 12" },
   { image: Action16, title: "Action Image 16" },
-  { image: Action18, title: "Action Image 18" },
 ];
 
 
