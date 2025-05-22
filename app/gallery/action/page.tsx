@@ -15,7 +15,6 @@ import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
 
 export default function ActionGallery() {
-  // ✅ Disable right-click globally
   useEffect(() => {
     const disableContextMenu = (e: MouseEvent) => e.preventDefault();
     document.addEventListener("contextmenu", disableContextMenu);
@@ -33,7 +32,7 @@ export default function ActionGallery() {
           speed={500}
           plugins={[lgThumbnail, lgZoom]}
           selector=".lightgallery-item"
-          download={false} // ✅ No download button
+          download={false}
         >
           <Masonry
             breakpointCols={{
@@ -48,9 +47,9 @@ export default function ActionGallery() {
             {actionItems.map((item, i) => (
               <a
                 key={i}
-                href={item.image.src} // ✅ Use `.src` from StaticImageData
+                href={item.image.src}
                 data-src={item.image.src}
-                data-sub-html="" // ✅ Prevent caption text
+                data-sub-html=""
                 className="lightgallery-item block my-2"
               >
                 <Image
