@@ -54,7 +54,7 @@ export default function PortraitGallery() {
               >
                 <Image
                   src={item.image} // ✅ can use the full object here
-                  alt=""
+                  alt={item.title}
                   width={600}
                   height={400}
                   className="w-full h-auto rounded-lg shadow"
